@@ -7,7 +7,18 @@ export const Users: CollectionConfig = {
   },
   auth: true,
   fields: [
-    // Email added by default
-    // Add more fields as needed
+    {
+      name: 'demoField',
+      label: 'Demo Field',
+      type: 'text',
+      required: true,
+      hooks: {
+        beforeValidate: [({value}) => {
+          // console.info(value)
+          // return value
+          return "you should see this"
+        }],
+      },
+    },
   ],
 }
